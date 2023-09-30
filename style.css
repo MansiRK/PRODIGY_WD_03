@@ -1,0 +1,74 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --blue: rgb(128, 186, 244);
+    --pink: rgb(174, 22, 239);
+    --dark-blue: rgb(1, 1, 40);
+    --light-pink: rgb(240, 128, 240);
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(to bottom right, rgb(53, 2, 35), rgb(20, 0, 45), rgb(1, 4, 26));
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* filter: blur(0.5); */
+}
+
+.game-container {
+    height: 100vh;
+    width: 100%;
+}
+
+.game-container .text-content,
+.game-content {
+    height: 100vh;
+    /* width: 30%; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    color: var(--pink);
+    font-size: 30px;
+    font-weight: 750;
+}
+
+h1:hover {
+    text-shadow: 2px 2px var(--blue);
+}
+
+.my-btn {
+    background-color: var(--blue);
+    height: 30px;
+    width: 80px;
+    border: none;
+    border-radius: 10px;
+    color: var(--dark-blue);
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.my-btn:hover {
+    background-color: var(--light-pink);
+}
+
+.cells {
+    display: flex;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 10px solid var(--pink);
+}
