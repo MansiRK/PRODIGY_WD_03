@@ -12,17 +12,30 @@
 
 <body>
 
-    <div class="container game-container border">
+    <div class="container game-container ">
         <div class="row">
-            <div class="col-4 text-content border">
+            <div class="col-4 text-content ">
                 <h1>Let's Play!</h1>
 
-                <button class="my-btn">Play</button>
+                <button class="btn-play">Play</button>
+
+                <div class="score-container ">
+                    <h3>Score</h3>
+                    <div class="score">
+                        <h4>X : <span id="playXScore">0</span></h4>
+                        <h4>O : <span id="playOScore">0</span></h4>
+                    </div>
+
+                    <div class="score">
+                        <h4>Draws</h4>
+                        <h4 class="draws">0</h4>
+                    </div>
+                </div>
             </div>
-            <div class="col-8 game-content border">
+            <div class="col-8 game-content ">
                 <div class="cells">
                     <div class="cell one">
-
+                        <img src="./images/x.png" alt="x">
                     </div>
                     <div class="cell two">
 

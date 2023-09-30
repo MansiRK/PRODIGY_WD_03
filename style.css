@@ -45,18 +45,20 @@ h1:hover {
     text-shadow: 2px 2px var(--blue);
 }
 
-.my-btn {
+.btn-play {
     background-color: var(--blue);
     height: 30px;
     width: 80px;
-    border: none;
-    border-radius: 10px;
+    border: 3px solid rgb(50, 12, 243);
+    border-radius: 5px;
     color: var(--dark-blue);
     font-size: 18px;
     font-weight: 500;
+    margin: 10px 20px;
+    text-transform: uppercase;
 }
 
-.my-btn:hover {
+.btn-play:hover {
     background-color: var(--light-pink);
 }
 
@@ -65,10 +67,64 @@ h1:hover {
 }
 
 .cell {
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
     display: flex;
     align-items: center;
     justify-content: center;
     border: 10px solid var(--pink);
+}
+
+.cell img {
+    width: 80%;
+}
+
+.cell.one {
+    /* border-right: none; */
+    border-top: none;
+    border-left: none;
+}
+
+.cell.two {
+    border-top: none;
+}
+
+.cell.three {
+    border-top: none;
+    border-right: none;
+}
+
+.cell.four {
+    border-left: none;
+}
+
+.cell.six {
+    border-right: none;
+}
+
+.cell.seven {
+    border-left: none;
+    border-bottom: none;
+}
+
+.cell.eight {
+    border-bottom: none;
+}
+
+.cell.nine {
+    border-bottom: none;
+    border-right: none;
+}
+
+.score-container {
+    width: 30%;
+    height: 30%;
+}
+
+h3 {
+    color: white;
+}
+
+h4 {
+    color: orange;
 }
