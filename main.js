@@ -50,3 +50,9 @@ const cellClicked = (e) => {
     }
   }
 };
+
+const addImg = (type) => {
+  const img = document.createElement("img");
+  img.src = `images/${type}.png`;
+  return img;
+};
