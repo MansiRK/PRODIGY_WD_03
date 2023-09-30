@@ -4,62 +4,125 @@
     box-sizing: border-box;
 }
 
-:root {
+/* :root {
     --blue: rgb(128, 186, 244);
     --pink: rgb(174, 22, 239);
     --dark-blue: rgb(1, 1, 40);
     --light-pink: rgb(240, 128, 240);
-}
+} */
 
 body {
     height: 100vh;
     width: 100%;
-    background-image: linear-gradient(to bottom right, rgb(53, 2, 35), rgb(20, 0, 45), rgb(1, 4, 26));
+    background-image: linear-gradient(to bottom right, rgb(34, 2, 35), rgb(21, 2, 51), rgb(2, 7, 45));
     background-repeat: no-repeat;
     background-size: cover;
     /* filter: blur(0.5); */
+
 }
 
 .game-container {
     height: 100vh;
     width: 100%;
+    /* margin: 20px; */
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+    /* margin: 0 20px; */
 }
 
-.game-container .text-content,
+.row {
+    width: 85%;
+}
+
 .game-content {
+    width: 65%;
+    /* padding: 10px; */
+    /* margin: 0 2px; */
+}
+
+.text-content {
+    width: 35%;
+    /* padding: 10px; */
+}
+
+.game-content,
+.text-content {
+    /* width: 100%; */
     height: 100vh;
-    /* width: 30%; */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 0 20px;
 }
 
 h1 {
-    color: var(--pink);
-    font-size: 30px;
-    font-weight: 750;
+    color: white;
+    font-size: 35px;
+    font-weight: 800;
+    margin: 10px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-transform: uppercase;
 }
 
 h1:hover {
-    text-shadow: 2px 2px var(--blue);
+    text-shadow: orange 2px 2px;
+}
+
+
+.heading .larger-t {
+    font-size: 40px;
+    font-weight: 800;
+    color: yellow;
+}
+
+h2 {
+    font-size: 30px;
+    text-align: center;
+    color: rgb(255, 233, 160);
+    letter-spacing: 1.5px;
+    text-shadow: rgb(247, 92, 20) 1.5px 1.5px;
+}
+
+h3 {
+    text-align: center;
+    color: white;
+    text-decoration: underline;
+}
+
+h4 {
+    color: rgb(247, 92, 20);
+    /* margin: 0 20px; */
+    padding: 0 20px;
+}
+
+h4 span {
+    padding: 0 10px;
+    color: white;
+}
+
+h4 span:hover {
+    text-shadow: rgb(247, 92, 20) 1.5px 1.5px;
 }
 
 .btn-play {
-    background-color: var(--blue);
-    height: 30px;
-    width: 80px;
-    border: 3px solid rgb(50, 12, 243);
-    border-radius: 5px;
-    color: var(--dark-blue);
+    background-color: yellow;
+    height: 100%;
+    width: 100%;
+    /* border: 3px solid rgb(50, 12, 243); */
+    border-radius: 50px;
+    color: rgb(247, 92, 20);
     font-size: 18px;
-    font-weight: 500;
-    margin: 10px 20px;
+    font-weight: 800;
+    padding: 10px 20px;
+    letter-spacing: 1.5px;
     text-transform: uppercase;
 }
 
 .btn-play:hover {
-    background-color: var(--light-pink);
+    background-color: white;
 }
 
 .cells {
@@ -72,7 +135,7 @@ h1:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 10px solid var(--pink);
+    border: 10px solid yellow;
 }
 
 .cell img {
@@ -80,7 +143,6 @@ h1:hover {
 }
 
 .cell.one {
-    /* border-right: none; */
     border-top: none;
     border-left: none;
 }
@@ -117,14 +179,187 @@ h1:hover {
 }
 
 .score-container {
-    width: 30%;
-    height: 30%;
+    width: 100%;
+    margin-top: 5px;
 }
 
-h3 {
-    color: white;
+.score-container .score {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
 }
 
-h4 {
-    color: orange;
+.score-container .score-draw {
+    text-align: center;
+}
+
+.toast {
+    background-color: rgb(242, 242, 228);
+    color: rgb(247, 92, 20);
+    text-shadow: black 1.5px 1.5px;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 25px;
+    text-align: center;
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    opacity: 0;
+    transition: top 0.5s ease, opacity 0.5s ease;
+    transform: translateX(-50%);
+}
+
+.toast.show {
+    opacity: 1;
+    top: 50px;
+}
+
+/* .hidden {
+    display: none;
+} */
+
+@media screen and (max-width: 1050px) and (min-width: 600px) {
+    .game-container {
+        height: 100vh;
+        margin: 20px 0;
+    }
+
+    .row {
+        width: 90%;
+        height: 85vh;
+    }
+
+    h1 {
+        font-size: 30px;
+        text-align: center;
+    }
+
+    h2 {
+        font-size: 25px;
+    }
+
+    h3 {
+        font-size: 20px;
+    }
+
+    h4 {
+        font-size: 18px;
+        /* padding: 0 10px; */
+    }
+
+    .text-content {
+        height: 30%;
+        width: 100%;
+        padding-top: 15px;
+    }
+
+    .game-content {
+        height: 70%;
+        width: 100%;
+        margin: 0;
+    }
+
+    .score-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+        padding: 0 5px
+    }
+
+    .score {
+        padding: 0 15px;
+    }
+
+    .cell {
+        width: 120px;
+        height: 120px;
+    }
+
+    .btn-play {
+        font-size: 20px;
+        margin: 5px;
+    }
+
+    .toast {
+        font-size: 22px;
+
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .game-container {
+        height: 100vh;
+        margin: 20px 0;
+    }
+
+    .row {
+        width: 90%;
+        height: 85vh;
+    }
+
+    h1 {
+        font-size: 23px;
+        text-align: center;
+        /* margin-top: 0; */
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+
+    h4 {
+        font-size: 15px;
+        padding: 0 5px;
+    }
+
+    h4 span {
+        padding: 0 2px
+    }
+
+    .text-content {
+        height: 30%;
+        width: 100%;
+        padding-top: 15px;
+    }
+
+    .game-content {
+        height: 70%;
+        width: 100%;
+        margin: 0;
+    }
+
+    .score-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+        padding: 0 5px
+    }
+
+    .score {
+        padding: 0 15px;
+    }
+
+    .cell {
+        width: 100px;
+        height: 100px;
+    }
+
+    .btn-play,
+    .btn-reset {
+        font-size: 15px;
+        margin: 0 5px;
+
+    }
+
+    .toast {
+        font-size: 20px;
+
+    }
 }
