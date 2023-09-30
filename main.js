@@ -10,8 +10,8 @@ const draws = document.querySelector(".draws");
 
 const toastContainer = document.querySelector(".toast");
 
-const playerX = "X";
-const playerO = "O";
+const playerX = "x";
+const playerO = "o";
 
 let initPlayerXScore = 0;
 let initPlayerOScore = 0;
