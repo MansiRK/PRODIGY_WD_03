@@ -127,6 +127,7 @@ h4 span:hover {
     align-items: center;
     justify-content: center;
     border: 10px solid var(--yellow);
+    cursor: pointer;
 }
 
 .cell img {
